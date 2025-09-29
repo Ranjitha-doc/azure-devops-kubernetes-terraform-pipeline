@@ -21,11 +21,11 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: Build and push Docker image
       inputs:
-        containerRegistry: 'doker-hub'
-        repository: 'Ranjitha-doc/currency-exchange'
+        containerRegistry: 'azure-pipelines.yml'   # must match service connection name
+        repository: 'ranjitha/currency-exchange'  # username/repo format
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags: '$(tag)'
-        addBaseImageData: false
+        tags: |
+          $(tag)
