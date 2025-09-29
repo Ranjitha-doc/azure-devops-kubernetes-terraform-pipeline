@@ -23,9 +23,8 @@ stages:
     - task: Docker@2
       displayName: Build and push Docker image
       inputs:
-        containerRegistry: 'azure-pipelines.yml'   # must match service connection name
-        repository: 'ranjitha/currency-exchange'  # username/repo format
+        containerRegistry: 'azure-pipelines.yml'
+        repository: 'ranjitha2206/currency-exchange'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags: |
-          $(tag)
+        tags: '$(tag)'
