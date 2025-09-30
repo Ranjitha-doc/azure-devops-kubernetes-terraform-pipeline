@@ -31,7 +31,7 @@ stages:
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
-        containerRegistry: 'azure-docker'
+        containerRegistry: 'ranjacrregistry'
         repository: 'ranjitha2206/currency-exchange-doc'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
